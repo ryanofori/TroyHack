@@ -34,12 +34,24 @@
                 </ul>
             </div>
           </nav>
+          <script>
+          function saveData(){
+                var data  = localStorage.getItem("date");
+                var dates = data ? JSON.parse(data) : [];
+                dates.push( Date.now() );
+                localStorage.setItem("date", JSON.stringify(dates));  
+                alert("Your data is stored");
+            }
+          </script>
 
           <div class="nav2">
             <span>
               <a href="" class="icons"><img src="https://cdn.britannica.com/77/170477-050-1C747EE3/Laptop-computer.jpg"></a>
               <!-- <a href="url">Dell Lattitidue C4H4D9, Core i5 processor, HD Graphics</a> -->
-              <button type="button" onclick="document.getElementById('date_time_button').innerHTML = Date()"> Dell Lattitidue C4H4D9, Core i5 processor, HD Graphics</button>
+              <button type="button" onclick="saveData()"> Dell Lattitidue C4H4D9, Core i5 processor, HD Graphics</button>
+              <button type="button" onclick="ReadCookie()"> Alert total cookies</button>
+              <button type="button" onclick="createCookie()"> Add to cookies</button>
+              <button type="button" onclick="saveData()"> Get total count of cookies</button>
               
               
               
@@ -64,3 +76,4 @@
 
 <!-- Thanks to -->
 <!-- https://www.w3schools.com/howto/howto_css_searchbar.asp -->
+<!-- https://www.youtube.com/watch?v=Vdo2fSMfUVM -->
